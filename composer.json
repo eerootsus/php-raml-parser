@@ -1,8 +1,8 @@
 {
-  "name": "cnam/php-raml-parser",
+  "name": "eerootsus/php-raml-parser",
   "type": "library",
   "description": "A RAML parser built in php",
-  "homepage": "https://github.com/alecsammon/php-raml-parser",
+  "homepage": "https://github.com/eerootsus/php-raml-parser",
   "license": "MIT",
 
   "authors": [
