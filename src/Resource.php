@@ -209,15 +209,17 @@ class Resource
         $regexUri = $this->uri;
 
         foreach ($this->getUriParameters() as $uriParameter) {
+            $parameterValidationPattern = preg_replace('/(\^|\$)/U', '', $uriParameter->getValidationPattern());
+
             $regexUri = str_replace(
                 '/{'.$uriParameter->getKey().'}',
-                '/'.$uriParameter->getValidationPattern(),
+                '/'.$parameterValidationPattern,
                 $regexUri
             );
 
             $regexUri = str_replace(
                 '/~{'.$uriParameter->getKey().'}',
-                '/(('.$uriParameter->getValidationPattern().')|())',
+                '/(('.$parameterValidationPattern.')|())',
                 $regexUri
             );
         }
