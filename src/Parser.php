@@ -543,13 +543,15 @@ class Parser
 
         if (in_array($fileExtension, ['yaml', 'yml', 'raml'])) {
             $rootDir = dirname($rootDir.'/'.$fileName);
+            $ramlString = file_get_contents($fullPath);
 
             // RAML and YAML files are always parsed
             $fileData = $this->parseRamlString(
-                $fullPath,
+                $ramlString,
                 $rootDir,
                 $parseSchemas
             );
+
             $fileData = $this->includeAndParseFiles($fileData, $rootDir, $parseSchemas);
         } else {
             if (in_array($fileExtension, array_keys($this->fileLoaders))) {
