@@ -33,8 +33,8 @@
 
   "require": {
     "justinrainbow/json-schema": "1.5.0",
-    "symfony/yaml": "~3.0",
-    "symfony/routing": "~3.0",
+    "symfony/yaml": "~2.8",
+    "symfony/routing": "~2.8",
     "oodle/inflect": "0.2.0"
   }
 }
